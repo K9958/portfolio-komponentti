@@ -5,19 +5,21 @@
     color: white;
 }
 
-td {
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
     color: white;
     background-color: rgb(51, 89, 118);
     font-weight: bold;
-    padding: 7px;
-}
-
-table {
-    margin: 5px;
     padding: 10px;
 }
 
-td:hover {
+li:hover {
     background-color: rgb(127, 173, 209);
     cursor:pointer;
 }
