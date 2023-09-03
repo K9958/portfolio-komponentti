@@ -1,0 +1,29 @@
+* {
+    background-color: rgb(108, 124, 137);
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+td {
+    color: white;
+    background-color: rgb(51, 89, 118);
+    font-weight: bold;
+    padding: 7px;
+}
+
+table {
+    margin: 5px;
+    padding: 10px;
+}
+
+td:hover {
+    background-color: rgb(127, 173, 209);
+    cursor:pointer;
+}
+
+a {
+    font-style: unset;
+    color: unset;
+    text-decoration: unset;
+    background-color: unset;
+}
