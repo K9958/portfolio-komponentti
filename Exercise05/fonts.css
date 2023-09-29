@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Ubuntu' ;
+    src: url(./fonts/Ubuntu-R.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu' ;
+    src: url(./fonts/Ubuntu-B.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Raleway' ;
+    src: url(./fonts/Raleway-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+article > p {
+    text-indent: 3em;
+}
+
+article > p:first-of-type {
+    text-indent: 0;
+    margin-bottom: 0;
+}
+
+
+.font-ubuntu {
+    font-family: 'Ubuntu';
+}
+
+.font-ubuntu-bold {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+}
+
+.font-raleway {
+    font-family: 'Raleway';
+}
+
+.font-justified {
+    text-align: justify;
+}
