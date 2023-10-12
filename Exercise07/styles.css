@@ -1,0 +1,44 @@
+@import url(./variables.css);
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+  display: flex;
+}
+
+
+.card {
+  margin: 30px;
+  width: var(--card-width);
+  background-color: var(--card-bg-color);
+  padding: var(--card-padding);
+  box-shadow: var(--card-shadow-h-offset) var(--card-shadow-v-offset) var(--card-shadow-blur) var(--card-main-color);
+  border: 1px solid var(--card-main-color);
+}
+
+.balance {
+  text-wrap: balance;
+}
+
+/* Here you can make media queries. (At least one!!) */
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .card {
+    margin: 30px auto;
+    width: 85%;
+    text-align: center;
+  }
+}
+
+p:has(> em) {
+  background-color: var(--card-main-color);
+  display: inline-block;
+  padding: 4px;
+  border-radius: 10px;
+}
