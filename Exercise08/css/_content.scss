@@ -1,0 +1,78 @@
+@import 'mixins';
+
+header {
+  @include flexBar;
+
+  padding: 1em;
+  margin-bottom: 2em;
+
+  h1 {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: map-get($font-weights-open-sans, 'light');
+  }
+
+  nav {
+    @include linkList;
+  }
+}
+
+footer {
+  @include flexBar;
+  @include linkList;
+
+  position: fixed;
+  bottom: 0;
+  padding: 1em 1em;
+}
+
+main {
+  width: 60%;
+  margin: auto;
+
+  h1,h2,h3,h4,h5 {
+    margin-bottom: 1em;
+    margin-top: 2em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  margin-bottom: 7em;
+
+  article:has(img) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    h2 {
+      flex-basis: 100%;
+    }
+
+    p {
+      flex-basis: 75%;
+    }
+    
+    img {
+      flex-basis: 25%;
+      max-width: 25%;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.wideimage {
+  background-image: url('https://cdn.pixabay.com/photo/2016/07/20/12/42/wheat-1530316_1280.jpg');
+  width: 100%;
+  margin-bottom: 1em;
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+
+  &--butdifferent {
+    @extend .wideimage;
+    background-image: url("https://cdn.pixabay.com/photo/2013/11/28/10/03/river-219972_1280.jpg") ;
+    height: 20em;
+  }
+}

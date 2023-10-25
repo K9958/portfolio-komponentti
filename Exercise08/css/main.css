@@ -1,0 +1,114 @@
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(229, 211, 211);
+  gap: 50px;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+header h1 {
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 300;
+}
+header nav ul {
+  display: flex;
+  gap: 20px;
+}
+header nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 10px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(229, 211, 211);
+  gap: 50px;
+  position: fixed;
+  bottom: 0;
+  padding: 1em 1em;
+}
+footer ul {
+  display: flex;
+  gap: 20px;
+}
+footer ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 10px;
+}
+
+main {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 7em;
+}
+main h1, main h2, main h3, main h4, main h5 {
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+main p {
+  margin-bottom: 1em;
+}
+main article:has(img) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+main article:has(img) h2 {
+  flex-basis: 100%;
+}
+main article:has(img) p {
+  flex-basis: 75%;
+}
+main article:has(img) img {
+  flex-basis: 25%;
+  max-width: 25%;
+  margin-bottom: 1em;
+}
+
+.wideimage, .wideimage--butdifferent {
+  background-image: url("https://cdn.pixabay.com/photo/2016/07/20/12/42/wheat-1530316_1280.jpg");
+  width: 100%;
+  margin-bottom: 1em;
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+}
+.wideimage--butdifferent {
+  background-image: url("https://cdn.pixabay.com/photo/2013/11/28/10/03/river-219972_1280.jpg");
+  height: 20em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(244, 237, 237);
+  font-family: "Open Sans", sans-serif, "Roboto", sans-serif;
+  color: rgb(17, 17, 17);
+  font-size: 110%;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 300;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(17, 17, 17);
+}
+
+a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=main.css.map */
