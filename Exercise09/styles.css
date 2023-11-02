@@ -1,0 +1,105 @@
+@keyframes colortransform {
+  0% {
+    fill: blue;
+  }
+  25% {
+    fill: green;
+  }
+  50% {
+    fill: yellow;
+  }
+  75% {
+    fill: red;
+  }
+  100% {
+    fill: blue;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(100deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(2, 0.5) translate(0, 50%);
+  }
+  66% {
+    transform: translate(0, -70%) scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+svg {
+  overflow: visible;
+}
+
+.buttoncontainer {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paavobutton {
+  max-width: 100px;
+  max-height: 100px;
+  transition: max-width, max-height, 0.1s ease-in-out;
+}
+.paavobutton .a, .paavobutton .b, .paavobutton .c, .paavobutton .d {
+  transition: filter 150ms ease-in-out;
+}
+
+.paavobutton:hover {
+  max-width: 110px;
+  max-height: 110px;
+  cursor: pointer;
+}
+.paavobutton:hover .a, .paavobutton:hover .b, .paavobutton:hover .c, .paavobutton:hover .d {
+  filter: brightness(60%);
+}
+
+.paavobutton:active {
+  max-width: 90px;
+  max-height: 90px;
+  filter: brightness(80%);
+}
+
+.threecontainer {
+  max-width: 500px;
+}
+
+svg .f {
+  fill: none;
+}
+
+svg .e, .f, .g, .h {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.e {
+  animation: colortransform 2s ease-in-out infinite, rotate 2s ease-in-out infinite;
+}
+
+.g {
+  animation: colortransform 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.h {
+  animation: bounce 0.8s ease-in-out infinite;
+}/*# sourceMappingURL=styles.css.map */
