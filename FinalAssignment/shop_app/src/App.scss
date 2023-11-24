@@ -39,17 +39,17 @@ $navbar-light-active-color: #ff0029;
 }
 
 .product-list {
-  margin: 10px;
+  margin: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
-  gap: 5px;
+  justify-content: flex-start;
+  gap: 10px;
 
   .product-card {
     display: flex;
     background-color: gray;
     color: white;
-    flex-basis: 0;
+    flex-basis: 100%;
     flex-grow: 1;
     min-width: 160px;
     max-width: 300px;
@@ -59,6 +59,11 @@ $navbar-light-active-color: #ff0029;
     }
 
   }
+}
+
+.product-container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // import custom css

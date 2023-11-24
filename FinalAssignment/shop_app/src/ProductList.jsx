@@ -56,13 +56,15 @@ const ProductList = () => {
   ];
 
   return (
-    <div className="product-list">
-      {products.map((product) => (
-        <Product 
-        key={product.id} 
-        product={product}
-        />
-      ))}
+    <div className="product-container">
+      <div className="product-list">
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
     </div>
   );
 }
