@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./App.scss"
 
 import Navigation from './Navigation';
@@ -10,12 +10,11 @@ import ErrorElement from './routes/ErrorElement';
 
 
 function App(params) {
-  const [cartItemIds, setCartItemIds] = useState([]);
 
   return (
     <div>
       <Navigation />
-      <Outlet cartItemIds={cartItemIds}/>
+      <Outlet />
       {params.error ? <ErrorElement /> : null}
       <Footer />
     </div>
