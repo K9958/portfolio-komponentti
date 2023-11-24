@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
   const expand = "lg"
@@ -14,17 +15,19 @@ const Navigation = () => {
             className='custom-toggler'
             style={{ border: "none" }}
           />
-          <Navbar.Brand href="#"
-          >
-            <img
-              alt=""
-              src="./logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            Komponentti
-          </Navbar.Brand>
+          <Link to={"/"}>
+            <Navbar.Brand href="/"
+            >
+              <img
+                alt=""
+                src="./logo.svg"
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
+              Komponentti
+            </Navbar.Brand>
+          </Link>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -32,41 +35,63 @@ const Navigation = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Navigaatio
+                <img
+                  alt=""
+                  src="./logo.svg"
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top"
+                />{' '}
+                Komponentti
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
+              <Nav className="justify-content-start flex-grow-1 pe-3">
+                <Link to={"/"}><Nav.Link href="/">Etusivu</Nav.Link></Link>
                 <NavDropdown
-                  title="Dropdown"
+                  title="Products"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                 >
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
+                  <NavDropdown.Item>
+                    <Link to={"/categories/gpu"}>Näytönohjaimet</Link>
                   </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
+                  <NavDropdown.Item>
+                    <Link to={"/categories/cpu"}>Prosessorit</Link>
                   </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={"/categories/motherboard"}>Emolevyt</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={"/categories/case"}>Kotelot</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={"/categories/psus"}>PSUs</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={"/categories/ram"}>RAM</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to={"/categories/hdds-ssds"}>HDDs & SSDs</Link>
+                  </NavDropdown.Item>
+                  {/* <NavDropdown.Divider /> */}
                 </NavDropdown>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
-          <Navbar.Brand href="#"
-            className='shopping-cart'
-          >
-            <img
-              alt=""
-              src="./shoppingcart.svg"
-              width="23"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
+          <Link to={"/cart"} style={{marginLeft:"auto"}}>
+            <Navbar.Brand href="/cart"
+              className='shopping-cart'
+            >
+              <img
+                alt=""
+                src="./shoppingcart.svg"
+                width="23"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
 
-          </Navbar.Brand>
+            </Navbar.Brand>
+          </Link>
         </Container>
       </Navbar>
     </>

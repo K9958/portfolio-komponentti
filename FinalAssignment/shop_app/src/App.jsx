@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./App.scss"
 
-import ProductList from './ProductList';
 import Navigation from './Navigation';
-import { RotatingBanner } from './Banner';
+import Footer from './Footer';
+
+import { Outlet } from 'react-router-dom';
+
+import ErrorElement from './routes/ErrorElement';
 
 
-function App() {
+function App(params) {
+  const [cartItemIds, setCartItemIds] = useState([]);
+
   return (
     <div>
       <Navigation />
-      <RotatingBanner />
-      <ProductList />
+      <Outlet cartItemIds={cartItemIds}/>
+      {params.error ? <ErrorElement /> : null}
+      <Footer />
     </div>
   );
 }
