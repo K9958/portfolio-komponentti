@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+const logo = require('./assets/logo.svg')
+
 const Navigation = () => {
   const expand = "lg"
   return (
@@ -21,7 +23,7 @@ const Navigation = () => {
             >
               <img
                 alt=""
-                src="./logo.svg"
+                src={logo}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
@@ -38,7 +40,7 @@ const Navigation = () => {
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                 <img
                   alt=""
-                  src="./logo.svg"
+                  src={logo}
                   width="30"
                   height="30"
                   className="d-inline-block align-top"
