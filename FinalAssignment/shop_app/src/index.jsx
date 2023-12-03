@@ -25,7 +25,7 @@ const store = configureStore({
 // react router
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />} errorElement={<App error={true} />}>
+    <Route path="/" element={<App />} errorElement={<App error={true}/>}>
       <Route element={<Home />} index="true" />
       <Route path="/product/:productId" element={<ProductPage />} />
       <Route path="categories/:category" element={<Categories />} />
@@ -33,7 +33,7 @@ const router = createBrowserRouter(
         path="cart"
         element={<Cart />} />
     </Route>
-  )
+  ), {basename : '/web-visualization/FinalAssignment/shop_app/build/'}
 );
 
 // render

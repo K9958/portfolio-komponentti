@@ -2,8 +2,6 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-import shoppingcart from './assets/shoppingcart.svg'
-
 const { categories } = require('./productdata.json')
 
 const Product = ({ product, showLong }) => {
@@ -39,7 +37,7 @@ const Product = ({ product, showLong }) => {
           ><img
               style={{ marginRight: "5px" }}
               alt=""
-              src={shoppingcart}
+              src="./shoppingcart.svg"
               width="23"
               height="20"
               className="d-inline-block align-top"
