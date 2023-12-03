@@ -8,6 +8,7 @@ const Navigation = () => {
     <>
       <Navbar expand={expand} className="bg-body-tertiary">
         <Container fluid
+        className='container'
           style={{ justifyContent: "start" }}
         >
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}
@@ -49,7 +50,7 @@ const Navigation = () => {
               <Nav className="justify-content-start flex-grow-1 pe-3">
                 <Link to={"/"}><Nav.Link href="/">Etusivu</Nav.Link></Link>
                 <NavDropdown
-                  title="Products"
+                  title="Tuotteet"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                 >
                   <NavDropdown.Item>
@@ -65,13 +66,13 @@ const Navigation = () => {
                     <Link to={"/categories/case"}>Kotelot</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Link to={"/categories/psus"}>PSUs</Link>
+                    <Link to={"/categories/psu"}>Virtalähteet</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Link to={"/categories/ram"}>RAM</Link>
+                    <Link to={"/categories/ram"}>Muistit</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    <Link to={"/categories/hdds-ssds"}>HDDs & SSDs</Link>
+                    <Link to={"/categories/hdd-ssd"}>Kiintolevyt ja SSD:t</Link>
                   </NavDropdown.Item>
                   {/* <NavDropdown.Divider /> */}
                 </NavDropdown>

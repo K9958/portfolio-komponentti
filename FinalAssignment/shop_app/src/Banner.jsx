@@ -14,6 +14,7 @@ const BannerImage = (props) => {
 export const RotatingBanner = () => {
     return (
       <Carousel
+      className='container p-0'
       >
       <Carousel.Item>
         <BannerImage text="First slide" src="https://images.pexels.com/photos/5625008/pexels-photo-5625008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />

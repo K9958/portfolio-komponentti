@@ -1,54 +1,415 @@
-[
-  {
-    "id": 1,
-    "name": "RTX 2080 Ti",
-    "price": 100,
-    "description": "A Masterpiece of Engineering",
-    "src": "https://ic.jimms.fi/product/2/3/423626-ig800gg.jpg",
-    "category": "gpu"
-  },
-  {
-    "id": 2,
-    "name": "Ryzen 9 7900X3D",
-    "price": 200,
-    "description": "Ryzen 9 7900X3D is one of the best CPUs in the market.",
-    "src": "https://ic.jimms.fi/product/2/3/423626-ig800gg.jpg",
-    "category": "gpu"
-  },
-  {
-    "id": 3,
-    "name": "Product 3",
-    "price": 300,
-    "description": "This is yet another product."
-  },
-  {
-    "id": 4,
-    "name": "Product 4",
-    "price": 400,
-    "description": "This is yet another product."
-  },
-  {
-    "id": 5,
-    "name": "Product 5",
-    "price": 500,
-    "description": "This is yet another product."
-  },
-  {
-    "id": 6,
-    "name": "Product 6",
-    "price": 600,
-    "description": "This is yet another product."
-  },
-  {
-    "id": 7,
-    "name": "Product 7",
-    "price": 700,
-    "description": "This is yet another product."
-  },
-  {
-    "id": 8,
-    "name": "Product 8",
-    "price": 800,
-    "description": "This is yet another product."
-  }
-]
+{
+  "categories": [
+    {
+      "id": "cpu",
+      "name": "Processors",
+      "name_fi": "Prosessorit",
+      "sales_text": "Upgrade your gaming and productivity with our high-performance processors. Experience lightning-fast speeds and seamless multitasking for all your computing needs. Whether you're a gamer, content creator, or professional, our processors deliver exceptional performance and power efficiency. Choose from a wide range of options to suit your requirements and take your computing experience to the next level.",
+      "sales_fi": "Paranna pelaamista ja tuottavuutta tehokkailla prosessoreillamme. Koe salamannopeat nopeudet ja saumaton moniajo kaikissa laskentatarpeissasi. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, prosessorimme tarjoavat poikkeuksellista suorituskykyä ja energiatehokkuutta. Valitse laajasta valikoimasta tarpeitasi vastaavia vaihtoehtoja ja vie laskentakokemuksesi uudelle tasolle."
+    },
+    {
+      "id": "gpu",
+      "name": "Graphics Cards",
+      "name_fi": "Näytönohjaimet",
+      "sales_text": "Enhance your gaming experience with our powerful graphics cards. Immerse yourself in stunning visuals and realistic gameplay with cutting-edge technologies like ray tracing and DLSS. Whether you're a casual gamer or a hardcore enthusiast, our graphics cards deliver exceptional performance and visual fidelity. Choose from a wide range of options to meet your gaming needs and take your gaming to the next level.",
+      "sales_fi": "Paranna pelikokemustasi tehokkailla näytönohjaimillamme. Uppoudu upeaan visuaaliseen ilmeeseen ja realistiseen pelattavuuteen huipputeknologioiden, kuten ray tracingin ja DLSS:n, avulla. Olitpa sitten satunnainen pelaaja tai hardcore-harrastaja, näytönohjaimemme tarjoavat poikkeuksellisen suorituskyvyn ja visuaalisen uskollisuuden. Valitse laajasta valikoimasta vaihtoehtoja, jotka vastaavat pelitarpeitasi, ja vie pelaamisesi uudelle tasolle."
+    },
+    {
+      "id": "ram",
+      "name": "RAM",
+      "name_fi": "Muistit",
+      "sales_text": "Boost your system's performance with our high-quality RAM modules. Experience faster data transfer speeds and improved multitasking capabilities for seamless computing. Whether you're a gamer, content creator, or professional, our RAM modules deliver exceptional performance and reliability. Choose from a wide range of options to meet your memory requirements and enhance your computing experience.",
+      "sales_fi":"Tehosta järjestelmäsi suorituskykyä laadukkailla RAM-muisteillamme. Koe nopeammat tiedonsiirtonopeudet ja paremmat monitehtäväominaisuudet saumatonta laskentaa varten. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, RAM-moduulimme tarjoavat poikkeuksellisen suorituskyvyn ja luotettavuuden. Valitse laajasta valikoimasta vaihtoehtoja, jotka täyttävät muistivaatimuksesi ja parantavat tietokonekokemustasi."
+    },
+    {
+      "id": "motherboard",
+      "name": "Motherboards",
+      "name_fi": "Emolevyt",
+      "sales_text": "Build your dream PC with our feature-rich motherboards. Experience superior performance, stability, and expandability for all your computing needs. Whether you're a gamer, content creator, or professional, our motherboards offer exceptional reliability and compatibility. Choose from a wide range of options to suit your requirements and create a powerful and efficient system.",
+      "sales_fi":"Rakenna unelmiesi tietokone monipuolisilla emolevyillämme. Koe ylivoimainen suorituskyky, vakaus ja laajennettavuus kaikkiin tietoteknisiin tarpeisiisi. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, emolevyjemme tarjoavat poikkeuksellista luotettavuutta ja yhteensopivuutta. Valitse monista vaihtoehdoista tarpeisiisi sopiva ja luo tehokas ja suorituskykyinen järjestelmä."
+    },
+    {
+      "id": "case",
+      "name": "Cases",
+      "name_fi": "Kotelot",
+      "sales_text": "Showcase your hardware with our stylish and functional PC cases. Experience excellent airflow, cable management, and customization options for a clean and organized build. Whether you're a gamer, content creator, or professional, our cases offer exceptional design and functionality. Choose from a wide range of options to match your style and build the perfect PC.",
+      "sales_fi":"Esittele laitteistosi tyylikkäillä ja toimivilla PC-koteloillamme. Koe erinomainen ilmavirtaus, kaapelinhallinta ja räätälöintimahdollisuudet siistiä ja järjestettyä rakentamista varten. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, kotelomme tarjoavat poikkeuksellista muotoilua ja toiminnallisuutta. Valitse monista eri vaihtoehdoista tyyliisi sopiva ja rakenna täydellinen PC."
+    },
+    {
+      "id": "psu",
+      "name": "Power Supplies",
+      "name_fi": "Virtalähteet",
+      "sales_text": "Power your system with our reliable and efficient power supplies. Experience stable and consistent power delivery for all your components. Whether you're a gamer, content creator, or professional, our power supplies offer exceptional performance and durability. Choose from a wide range of options to meet your power requirements and ensure a smooth and reliable operation.",
+      "sales_fi": "Anna järjestelmällesi virtaa luotettavien ja tehokkaiden virtalähteidemme avulla. Koe vakaa ja johdonmukainen virransyöttö kaikille komponenteillesi. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, virtalähteemme tarjoavat poikkeuksellista suorituskykyä ja kestävyyttä. Valitse monista eri vaihtoehdoista, jotka täyttävät virtatarpeesi ja varmistavat sujuvan ja luotettavan toiminnan."
+    },
+    {
+      "id": "hdd-ssd",
+      "name": "Hard Drives & SSDs",
+      "name_fi": "Kiintolevyt ja SSD:t",
+      "sales_text": "Store and access your data with our high-performance hard drives and SSDs. Experience fast data transfer speeds and reliable storage for all your files and applications. Whether you're a gamer, content creator, or professional, our storage solutions offer exceptional performance and reliability. Choose from a wide range of options to meet your storage needs and keep your data safe and accessible.",
+      "sales_fi": "Tallenna ja käytä tietojasi suorituskykyisillä kiintolevyillä ja SSD-asemilla. Koe nopeat tiedonsiirtonopeudet ja luotettava tallennus kaikille tiedostoillesi ja sovelluksillesi. Olitpa sitten pelaaja, sisällöntuottaja tai ammattilainen, tallennusratkaisumme tarjoavat poikkeuksellista suorituskykyä ja luotettavuutta. Valitse laajasta valikoimasta vaihtoehtoja, jotka täyttävät tallennustarpeesi ja pitävät tietosi turvassa ja saatavilla."
+    }
+  ],
+  "productdata": [
+    {
+      "id": 187800,
+      "name": "NVIDIA GeForce RTX 4090",
+      "price": 1299,
+      "description": "The RTX 4090 is a masterpiece of engineering, delivering unparalleled graphics performance for gaming and content creation.",
+      "description_fi": "RTX 4090 on insinööritaidon mestariteos, joka tarjoaa vertaansa vailla olevan grafiikkasuorituskyvyn pelaamiseen ja sisällöntuotantoon.",
+      "src": "https://i.ebayimg.com/images/g/y7YAAOSwt0Nk73zs/s-l1600.jpg",
+      "category": "gpu",
+      "popularity": 10.0
+    },
+    {
+      "id": 482724,
+      "name": "Ryzen 9 7900X3D",
+      "price": 499,
+      "description": "The Ryzen 9 7900X3D is one of the best CPUs in the market, offering exceptional performance for gaming, multitasking, and content creation.",
+      "description_fi": "Ryzen 9 7900X3D on yksi markkinoiden parhaista prosessoreista, tarjoten poikkeuksellisen suorituskyvyn pelaamiseen, moniajoon ja sisällöntuotantoon.",
+      "src": "https://ic.jimms.fi/product/2/2/428627-ig800gg.jpg",
+      "category": "cpu",
+      "popularity": 9.9
+    },
+    {
+      "id": 503968,
+      "name": "Intel Core i9-9900K",
+      "price": 399,
+      "description": "The Intel Core i9-9900K is a high-performance processor designed for gaming and content creation.",
+      "description_fi": "Intel Core i9-9900K on huipputehokas prosessori, joka on suunniteltu pelaamiseen ja sisällön luomiseen.",
+      "src": "https://www.gigantti.fi/image/dv_web_D18000100297439/12528/intel-core-i9-9900k-prosessori-box--pdp_zoom-3000--pdp_main-960.jpg",
+      "category": "cpu",
+      "popularity": 9.1
+    },
+    {
+      "id": 251019,
+      "name": "NVIDIA GeForce RTX 3070",
+      "price": 699,
+      "description": "The NVIDIA GeForce RTX 3070 is a powerful graphics card that delivers exceptional gaming performance.",
+      "description_fi": "NVIDIA GeForce RTX 3070 on tehokas näytönohjain, joka tarjoaa poikkeuksellista pelisuorituskykyä.",
+      "src": "https://datatronic.fi/959490-large_default/pny-vcg3070t8tfbpb1-naytonohjain-nvidia-geforce-rtx-3070-ti-8-gb-gddr6x-pny-vcg3070t8tfbpb1.jpg",
+      "category": "gpu",
+      "popularity": 5.7
+    },
+    {
+      "id": 135428,
+      "name": "Corsair Vengeance RGB Pro",
+      "price": 149,
+      "description": "The Corsair Vengeance RGB Pro is a high-performance RAM kit that offers stunning RGB lighting and excellent overclocking capabilities.",
+      "description_fi": "Corsair Vengeance RGB Pro on huipputehokas RAM-muistikitti, joka tarjoaa upean RGB-valaistuksen ja erinomaiset ylikellotusominaisuudet.",
+      "src": "https://ic.jimms.fi/product/7/7/274072-ig800gg.jpg",
+      "category": "ram",
+      "popularity": 1.8
+    },
+    {
+      "id": 991269,
+      "name": "Samsung 970 EVO Plus",
+      "price": 199,
+      "description": "The Samsung 970 EVO Plus is a blazing-fast NVMe SSD that provides exceptional storage performance for your PC.",
+      "description_fi": "Samsung 970 EVO Plus on huippunopea NVMe SSD, joka tarjoaa poikkeuksellisen tallennustehon tietokoneellesi.",
+      "src": "https://ic.jimms.fi/product/8/9/229980-ig800gg.jpg",
+      "category": "hdd-ssd",
+      "popularity": 6.4
+    },
+    {
+      "id": 7712954,
+      "name": "ASUS ROG Strix X570-E Gaming",
+      "price": 299,
+      "description": "The ASUS ROG Strix X570-E Gaming is a high-end motherboard that offers excellent features and performance for gaming enthusiasts.",
+      "description_fi": "ASUS ROG Strix X570-E Gaming on huippuluokan emolevy, joka tarjoaa erinomaiset ominaisuudet ja suorituskyvyn pelaajille.",
+      "src": "https://datatronic.fi/87646-large_default/asus-rog-strix-x570-e-gaming-amd-x570-kanta-am4-atx-asus-90mb1150-m0eay0.jpg",
+      "category": "motherboard",
+      "popularity": 2.9
+    },
+    {
+      "id": 789912,
+      "name": "EVGA SuperNOVA 850 G5",
+      "price": 149,
+      "description": "The EVGA SuperNOVA 850 G5 is a reliable and efficient power supply unit that delivers stable power to your PC components.",
+      "description_fi": "EVGA SuperNOVA 850 G5 on luotettava ja tehokas virtalähde, joka tuottaa vakaata virtaa tietokoneen komponenteille.",
+      "src": "https://ic.jimms.fi/product/5/2/339457-ig800gg.jpg",
+      "category": "psu",
+      "popularity": 8.3
+    },
+    {
+      "id": 319940,
+      "name": "AMD Ryzen 7 5800X",
+      "price": 449,
+      "description": "The AMD Ryzen 7 5800X is a high-performance CPU that offers excellent gaming and multitasking capabilities.",
+      "description_fi": "AMD Ryzen 7 5800X on huipputehokas prosessori, joka tarjoaa erinomaisen pelaamisen ja moniajo-ominaisuudet.",
+      "src": "https://ic.jimms.fi/product/7/6/303973-ig800gg.jpg",
+      "category": "cpu",
+      "popularity": 7.2
+    },
+    {
+      "id": 763209,
+      "name": "Gigabyte GeForce RTX 3060 Ti",
+      "price": 599,
+      "description": "The Gigabyte GeForce RTX 3060 Ti is a powerful graphics card that provides smooth gaming performance and ray tracing capabilities.",
+      "description_fi": "Gigabyte GeForce RTX 3060 Ti on tehokas näytönohjain, joka tarjoaa sulavan pelisuorituskyvyn ja ray tracing -ominaisuudet.",
+      "src": "https://datatronic.fi/635404-large_default/gigabyte-geforce-rtx-3060-ti-windforce-oc-8g-nvidia-8-gb-gddr6-gigabyte-gv-n306twf2oc-8gd.jpg",
+      "category": "gpu",
+      "popularity": 4.9
+    },
+    {
+      "id": 224085,
+      "name": "Crucial Ballistix RGB",
+      "price": 129,
+      "description": "The Crucial Ballistix RGB is a high-quality RAM kit that offers reliable performance and customizable RGB lighting.",
+      "description_fi": "Crucial Ballistix RGB on laadukas RAM-muistikitti, joka tarjoaa luotettavan suorituskyvyn ja mukautettavan RGB-valaistuksen.",
+      "src": "https://easypc.com.ph/cdn/shop/products/5443-d_2048x2048.jpg?v=1658304117",
+      "category": "ram",
+      "popularity": 2.3
+    },
+    {
+      "id": 472967,
+      "name": "Western Digital Blue 1TB",
+      "price": 79,
+      "description": "The Western Digital Blue 1TB is a reliable hard drive that provides ample storage space for your files and applications.",
+      "description_fi": "Western Digital Blue 1TB on luotettava kiintolevy, joka tarjoaa runsaasti tallennustilaa tiedostoillesi ja sovelluksillesi.",
+      "src": "https://ic.jimms.fi/product/1/3/128616-ig800gg.jpg",
+      "category": "hdd-ssd",
+      "popularity": 3.8
+    },
+    {
+      "id": 667203,
+      "name": "MSI MAG B550 TOMAHAWK",
+      "price": 199,
+      "description": "The MSI MAG B550 TOMAHAWK is a feature-packed motherboard that offers excellent performance and compatibility for gaming.",
+      "description_fi": "MSI MAG B550 TOMAHAWK on ominaisuuksiltaan täyteen pakattu emolevy, joka tarjoaa erinomaisen suorituskyvyn ja yhteensopivuuden pelaamiseen.",
+      "src": "https://ic.jimms.fi/product/4/8/289041-ig800gg.jpg",
+      "category": "motherboard",
+      "popularity": 5.1
+    },
+    {
+      "id": 890908,
+      "name": "Seasonic Focus GX-750",
+      "price": 129,
+      "description": "The Seasonic Focus GX-750 is a reliable power supply unit that delivers stable and efficient power to your PC components.",
+      "description_fi": "Seasonic Focus GX-750 on luotettava virtalähde, joka toimittaa vakaa ja tehokas virta tietokoneesi komponenteille.",
+      "src": "https://datatronic.fi/388951-large_default/seasonic-focus-gx-750-virtalahdeyksikko-750-w-20-4-pin-atx-atx-musta-seasonic-focus-gx-750.jpg",
+      "category": "psu",
+      "popularity": 6.7
+    },
+    {
+      "id": 745663,
+      "name": "AMD Ryzen 5 5600X",
+      "price": 299,
+      "description": "The AMD Ryzen 5 5600X is a powerful CPU that offers excellent performance for gaming and productivity tasks.",
+      "description_fi": "AMD Ryzen 5 5600X on tehokas prosessori, joka tarjoaa erinomaisen suorituskyvyn pelaamiseen ja tuottavuuteen.",
+      "src": "https://ic.jimms.fi/product/6/1/303968-ig800gg.jpg",
+      "category": "cpu",
+      "popularity": 6.2
+    },
+    {
+      "id": 174653,
+      "name": "ZOTAC Gaming GeForce GTX 1660",
+      "price": 249,
+      "description": "The ZOTAC Gaming GeForce GTX 1660 is a budget-friendly graphics card that offers good gaming performance for its price.",
+      "description_fi": "ZOTAC Gaming GeForce GTX 1660 on budjettiystävällinen näytönohjain, joka tarjoaa hyvän pelisuorituskyvyn hintaansa nähden.",
+      "src": "https://www.tradeinn.com/f/13872/138721169_2/zotac-naytonohjain-gtx-1660-super-twin-fan-6gb-gddr6.jpg",
+      "category": "gpu",
+      "popularity": 3.5
+    },
+    {
+      "id": 626612,
+      "name": "G.Skill Trident Z RGB",
+      "price": 169,
+      "description": "The G.Skill Trident Z RGB is a high-performance RAM kit that offers excellent overclocking capabilities and stunning RGB lighting.",
+      "description_fi": "G.Skill Trident Z RGB on huipputehokas RAM-muistikitti, joka tarjoaa erinomaiset ylikellotusominaisuudet ja upean RGB-valaistuksen.",
+      "src": "https://datatronic.fi/321354-large_default/gskill-trident-z-rgb-f4-3600c16d-16gtzrc-muistimoduuli-16-gb-2-x-8-gb-ddr4-3600-mhz-gskill-f4-3600c16d-16gtzrc.jpg",
+      "category": "ram",
+      "popularity": 2.1
+    },
+    {
+      "id": 153236,
+      "name": "Crucial MX500 500GB",
+      "price": 69,
+      "description": "The Crucial MX500 500GB is a reliable SSD that provides fast and responsive storage for your PC.",
+      "description_fi": "Crucial MX500 500GB on luotettava SSD, joka tarjoaa nopean ja reagoivan tallennustilan tietokoneellesi.",
+      "src": "https://ic.jimms.fi/product/5/8/187851-ig800gg.jpg",
+      "category": "hdd-ssd",
+      "popularity": 4.3
+    },
+    {
+      "id": 458161,
+      "name": "ASRock B450M PRO4",
+      "price": 89,
+      "description": "The ASRock B450M PRO4 is a budget-friendly motherboard that offers good performance and features for entry-level gaming.",
+      "description_fi": "ASRock B450M PRO4 on budjettiystävällinen emolevy, joka tarjoaa hyvän suorituskyvyn ja ominaisuudet aloittelijoille pelaamiseen.",
+      "src": "https://www.tradeinn.com/f/13878/138781555/asrock-emolevy-b450m-pro4-r2.0.jpg",
+      "category": "motherboard",
+      "popularity": 3.9
+    },
+    {
+      "id": 205190,
+      "name": "Corsair RM750x",
+      "price": 139,
+      "description": "The Corsair RM750x is a high-quality power supply unit that delivers reliable and efficient power to your PC components.",
+      "description_fi": "Corsair RM750x on laadukas virtalähde, joka tuottaa luotettavaa ja tehokasta virtaa tietokoneen komponenteille..",
+      "src": "https://ic.jimms.fi/product/5/8/337351-ig800gg.jpg",
+      "category": "psu",
+      "popularity": 7.8
+    },
+    {
+      "id": 857197,
+      "name": "Intel Core i7-11700K",
+      "price": 399,
+      "description": "The Intel Core i7-11700K is a high-performance CPU that offers excellent gaming and multitasking capabilities.",
+      "description_fi": "Intel Core i7-11700K on suorituskykyinen suoritin, joka tarjoaa erinomaiset peli- ja monitehtäväominaisuudet.",
+      "src": "https://ic.jimms.fi/product/4/4/329945-ig800gg.jpg",
+      "category": "cpu",
+      "popularity": 8.5
+    },
+    {
+      "id": 651882,
+      "name": "AMD Radeon RX 6900 XT",
+      "price": 999,
+      "description": "The AMD Radeon RX 6900 XT is a top-of-the-line graphics card that delivers exceptional gaming performance and ray tracing capabilities.",
+      "description_fi": "AMD Radeon RX 6900 XT on huippuluokan näytönohjain, joka tarjoaa poikkeuksellisen pelisuorituskyvyn ja ray tracing -ominaisuudet.",
+      "src": "https://datatronic.fi/459830-large_default/asrock-radeon-rx-6900-xt-oc-formula-amd-16-gb-gddr6-asrock-90-ga2jzz-00uanf.jpg",
+      "category": "gpu",
+      "popularity": 9.7
+    },
+    {
+      "id": 362184,
+      "name": "Corsair Dominator Platinum RGB",
+      "price": 199,
+      "description": "The Corsair Dominator Platinum RGB is a premium RAM kit that offers exceptional performance and customizable RGB lighting.",
+      "description_fi": "Corsair Dominator Platinum RGB on huippuluokan RAM-muistikitti, joka tarjoaa poikkeuksellisen suorituskyvyn ja mukautettavan RGB-valaistuksen.",
+      "src": "https://datatronic.fi/278210-large_default/corsair-dominator-platinum-rgb-muistimoduuli-32-gb-4-x-8-gb-ddr4-3200-mhz-corsair-cmt32gx4m4z3200c16.jpg",
+      "category": "ram",
+      "popularity": 3.6
+    },
+    {
+      "id": 870914,
+      "name": "Samsung 980 PRO 1TB",
+      "price": 249,
+      "description": "The Samsung 980 PRO 1TB is a high-speed NVMe SSD that provides lightning-fast storage performance for your PC.",
+      "description_fi": "Samsung 980 PRO 1TB on huippunopea NVMe SSD, joka tarjoaa salamannopea tallennustehon tietokoneellesi.",
+      "src": "https://ic.jimms.fi/product/3/8/300931-ig800gg.jpg",
+      "category": "hdd-ssd",
+      "popularity": 7.1
+    },
+    {
+      "id": 196270,
+      "name": "Gigabyte B550 AORUS PRO",
+      "price": 179,
+      "description": "The Gigabyte B550 AORUS PRO is a feature-rich motherboard that offers excellent performance and compatibility for gaming.",
+      "description_fi": "Gigabyte B550 AORUS PRO on ominaisuuksiltaan täyteen pakattu emolevy, joka tarjoaa erinomaisen suorituskyvyn ja yhteensopivuuden pelaamiseen.",
+      "src": "https://cdn.multitronic.fi/images/prod/E/0/B550%20AORUS%20PRO%20AX-1.jpg",
+      "category": "motherboard",
+      "popularity": 4.5
+    },
+    {
+      "id": 321871,
+      "name": "EVGA SuperNOVA 750 G6",
+      "price": 129,
+      "description": "The EVGA SuperNOVA 750 G6 is a reliable and efficient power supply unit that delivers stable power to your PC components.",
+      "description_fi": "EVGA SuperNOVA 750 G6 on luotettava ja tehokas virtalähde, joka toimittaa vakaa virtaa tietokoneesi komponenteille.",
+      "src": "https://ic.jimms.fi/product/0/9/340300-ig800gg.jpg",
+      "category": "psu",
+      "popularity": 6.9
+    },
+    {
+      "id": 343832,
+      "name": "AMD Ryzen 9 5900X",
+      "price": 549,
+      "description": "The AMD Ryzen 9 5900X is a high-performance CPU that offers exceptional gaming and multitasking capabilities.",
+      "description_fi": "AMD Ryzen 9 5900X on huipputehokas prosessori, joka tarjoaa poikkeuksellisen pelaamisen ja moniajo-ominaisuudet.",
+      "src": "https://ic.jimms.fi/product/8/5/303984-ig800gg.jpg",
+      "category": "cpu",
+      "popularity": 8.2
+    },
+    {
+      "id": 989738,
+      "name": "NVIDIA GeForce RTX 3080 Ti",
+      "price": 1199,
+      "description": "The NVIDIA GeForce RTX 3080 Ti is a flagship graphics card that delivers unparalleled gaming performance and ray tracing capabilities.",
+      "description_fi": "NVIDIA GeForce RTX 3080 Ti on lippulaivanäytönohjain, joka tarjoaa vertaansa vailla olevaa pelisuorituskykyä ja säteenseurantaominaisuuksia.",
+      "src": "https://i.ebayimg.com/images/g/QaYAAOSwwpJlVVDB/s-l1600.jpg",
+      "category": "gpu",
+      "popularity": 9.9
+    },
+    {
+      "id": 463681,
+      "name": "Corsair Vengeance LPX",
+      "price": 99,
+      "description": "The Corsair Vengeance LPX is a reliable RAM kit that offers excellent performance and compatibility for your PC.",
+      "description_fi": "Corsair Vengeance LPX on luotettava RAM-muistikitti, joka tarjoaa erinomaisen suorituskyvyn ja yhteensopivuuden tietokoneellesi.",
+      "src": "https://ic.jimms.fi/product/5/5/251354-ig800gg.jpg",
+      "category": "ram",
+      "popularity": 2.7
+    },
+    {
+      "id": 993274,
+      "name": "Seagate Barracuda 2TB",
+      "price": 89,
+      "description": "The Seagate Barracuda 2TB is a high-capacity hard drive that provides reliable storage for your files and applications.",
+      "description_fi": "Seagate Barracuda 2TB on suurikapasiteettinen kiintolevy, joka tarjoaa luotettava tallennustila tiedostoillesi ja sovelluksillesi.",
+      "src": "https://ic.jimms.fi/product/7/8/226971-ig800gg.jpg",
+      "category": "hdd-ssd",
+      "popularity": 4.1
+    },
+    {
+      "id": 636716,
+      "name": "NZXT H510",
+      "price": 79,
+      "description": "The NZXT H510 is a sleek and compact computer case that offers excellent airflow and cable management.",
+      "description_fi": "NZXT H510 on tyylikäs ja kompakti tietokonekotelo, joka tarjoaa erinomaisen ilmavirran ja kaapelinhallinnan.",
+      "src": "https://www.gigantti.fi/image/dv_web_D180001002266938/47781/nzxt-h510-pc-kotelo-musta--pdp_zoom-3000--pdp_main-960.jpg",
+      "category": "case",
+      "popularity": 5.3
+    },
+    {
+      "id": 524485,
+      "name": "Corsair iCUE 4000X RGB",
+      "price": 129,
+      "description": "The Corsair iCUE 4000X RGB is a high-performance computer case with customizable RGB lighting and excellent cooling capabilities.",
+      "description_fi": "Corsair iCUE 4000X RGB on huippusuorituskykyinen tietokonekotelo, jossa on mukautettava RGB-valaistus ja erinomaiset jäähdytysominaisuudet.",
+      "src": "https://ic.jimms.fi/product/3/8/296931-ig800gg.jpg",
+      "category": "case",
+      "popularity": 7.9
+    },
+    {
+      "id": 306883,
+      "name": "Fractal Design Meshify C",
+      "price": 89,
+      "description": "The Fractal Design Meshify C is a stylish computer case with excellent airflow and a tempered glass side panel.",
+      "description_fi": "Fractal Design Meshify C on tyylikäs tietokonekotelo, jossa on erinomainen ilmavirta ja karkaistu lasisivupaneeli.",
+      "src": "https://ic.jimms.fi/product/1/5/192014-ig800gg.jpg",
+      "category": "case",
+      "popularity": 6.5
+    },
+    {
+      "id": 608130,
+      "name": "Cooler Master MasterBox MB511",
+      "price": 69,
+      "description": "The Cooler Master MasterBox MB511 is a budget-friendly computer case with good airflow and ample space for components.",
+      "description_fi": "Cooler Master MasterBox MB511 on budjettiystävällinen tietokonekotelo, jossa on hyvä ilmavirta ja runsaasti tilaa komponenteille.",
+      "src": "https://hinta.fi/product_images/72/1865172_45844823_3_2yw8.jpg",
+      "category": "case",
+      "popularity": 4.7
+    },
+    {
+      "id": 395341,
+      "name": "Phanteks Eclipse P400A",
+      "price": 99,
+      "description": "The Phanteks Eclipse P400A is a mid-tower computer case with excellent airflow and a clean, minimalist design.",
+      "description_fi": "Phanteks Eclipse P400A on keskikokoinen tietokonekotelo, jossa on erinomainen ilmavirta ja siisti minimalistinen muotoilu.",
+      "src": "https://ic.jimms.fi/product/3/7/250632-ig800gg.jpg",
+      "category": "case",
+      "popularity": 5.8
+    },
+    {
+      "id": 757908,
+      "name": "Lian Li PC-O11 Dynamic",
+      "price": 179,
+      "description": "The Lian Li PC-O11 Dynamic is a premium computer case with a tempered glass front panel and excellent water cooling support.",
+      "description_fi": "Lian Li PC-O11 Dynamic on huippuluokan tietokonekotelo, jossa on karkaistu lasinen etupaneeli ja erinomainen vesijäähdytystuki.",
+      "src": "https://ic.jimms.fi/product/0/5/199804-ig800gg.jpg",
+      "category": "case",
+      "popularity": 8.2
+    }
+  ]
+}

@@ -1,22 +1,38 @@
 import { useParams } from 'react-router-dom';
 
 import ProductList from '../ProductList';
+import ErrorElement from './ErrorElement';
 
 // import dummy data
-const productdata = require('../productdata.json');
-
+const { productdata, categories } = require('../productdata.json');
 
 const Categories = () => {
   const { category } = useParams();
-  
+
 
   // filter products by category
   const filteredProducts = productdata.filter((product) => product.category === category)
 
+  const categoryExists = categories.some((cat) => cat.id === category)
+  
+
+  let categoryName = ''
+
+  if (categoryExists) {
+    const { name_fi } = categories.find((cat) => cat.id === category)
+    categoryName = name_fi
+  }
+  
+
+
   return (
     <div>
-      <h1 className='first-header'>Categories: {category}</h1>
-      <ProductList products={filteredProducts} />
+      {!categoryExists ? <ErrorElement h2='Tuoteryhmää ei löydy :(' /> :
+        <div>
+          <h1 className='first-header'>{categoryName}</h1>
+          <ProductList products={filteredProducts} />
+        </div>
+      }
     </div>
   );
 }
