@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/web-visualization/FinalAssignment/shop_app/build/static/css/main.ad095c0d.css",
-    "main.js": "/web-visualization/FinalAssignment/shop_app/build/static/js/main.91be9533.js",
+    "main.js": "/web-visualization/FinalAssignment/shop_app/build/static/js/main.875522cd.js",
     "static/js/787.75e1f7fc.chunk.js": "/web-visualization/FinalAssignment/shop_app/build/static/js/787.75e1f7fc.chunk.js",
     "index.html": "/web-visualization/FinalAssignment/shop_app/build/index.html",
     "static/media/shoppingcart.svg": "/web-visualization/FinalAssignment/shop_app/build/static/media/shoppingcart.45936093ec8364095113c5a36139294b.svg",
     "main.ad095c0d.css.map": "/web-visualization/FinalAssignment/shop_app/build/static/css/main.ad095c0d.css.map",
-    "main.91be9533.js.map": "/web-visualization/FinalAssignment/shop_app/build/static/js/main.91be9533.js.map",
+    "main.875522cd.js.map": "/web-visualization/FinalAssignment/shop_app/build/static/js/main.875522cd.js.map",
     "787.75e1f7fc.chunk.js.map": "/web-visualization/FinalAssignment/shop_app/build/static/js/787.75e1f7fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad095c0d.css",
-    "static/js/main.91be9533.js"
+    "static/js/main.875522cd.js"
   ]
 }
