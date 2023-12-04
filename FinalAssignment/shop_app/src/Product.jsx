@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom'
 
 import shoppingcart from './assets/shoppingcart.svg'
 
+// redux
+import { useDispatch } from 'react-redux'
+import { addToCart } from './storeSlice'
+
 const { categories } = require('./productdata.json')
 
 const Product = ({ product, showLong }) => {
+  const dispatch = useDispatch()
 
   const linkText = `/product/${product.id}`
   return (
@@ -36,6 +41,7 @@ const Product = ({ product, showLong }) => {
           <Button
             className='product-button'
             variant="primary"
+            onClick={() => dispatch(addToCart({ id: product.id, count: 1 }))}
           ><img
               style={{ marginRight: "5px" }}
               alt=""

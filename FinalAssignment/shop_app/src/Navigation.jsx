@@ -1,14 +1,17 @@
 import React from 'react'
 import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const imageURL ="https://k9958.pages.labranet.jamk.fi/web-visualization/FinalAssignment/shop_app/build/"
 
 const Navigation = () => {
+  const cartItems = useSelector(state => state.cart)
+
   const expand = "lg"
   return (
     <>
-      <Navbar expand={expand} className="bg-body-tertiary">
+      <Navbar expand={expand} sticky="top"  className="bg-body-tertiary navbar">
         <Container fluid
         className='container'
           style={{ justifyContent: "start" }}
