@@ -8,6 +8,18 @@ const Cart = () => {
   // dummy cart items
   const cartItems = productdata
 
+  function calculateTotal() {
+    let total = 0
+    cartItems.forEach(item => {
+      total += item.price
+    })
+    return total
+  }
+
+  function formatEuros(price) {
+    return new Intl.NumberFormat("fi-FI").format(price).toString() + ' €'
+  }
+
   return (
     <div className="cart-container container">
       <h1 className='first-header'>Ostoskorin sisältö</h1>
@@ -19,16 +31,30 @@ const Cart = () => {
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
               <Card.Text>
-                {item.description} <br></br>
-                Price: {item.price}
+                {item.description}
               </Card.Text>
-              <Button
-                className='product-button'
-                variant="primary"
-              >Poista tuote</Button>
+              <div className='end-of-card'>
+                <Card.Text className='product-price'>
+                  {item.price},- €
+                </Card.Text>
+                <Button
+                  className='product-button'
+                  variant="primary"
+                >Poista tuote
+                </Button>
+              </div>
             </Card.Body>
           </Card>
         ))}
+        <Card className='cart-overview'>
+          <h1>Yhteenveto </h1>
+          <div>
+            <Card.Text>
+              <p>Tuotteet yhteensä: {cartItems.length}</p>
+              <p>Yhteensä: {formatEuros(calculateTotal())}</p>
+            </Card.Text>
+          </div>
+        </Card>
       </div>
     </div>
   )

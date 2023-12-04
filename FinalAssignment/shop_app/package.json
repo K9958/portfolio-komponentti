@@ -1,6 +1,6 @@
 {
   "name": "shop_app",
-  "homepage": "/web-visualization/FinalAssignment/shop_app/build",
+  "homepage": "/web-visualization/FinalAssignment/shop_app/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
