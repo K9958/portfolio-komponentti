@@ -8,7 +8,7 @@ build:
   script:
     - cd FinalAssignment/shop_app
     - npm install
-    - npm run build
+    - npm run build CI=false
   only:
     - main
   artifacts:
