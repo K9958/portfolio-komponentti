@@ -28,7 +28,6 @@ test_artifact_upload:
   script:
     - cd FinalAssignment/shop_app
     - touch ./build/test.txt
-    - cp -r ./build build
   only:
     - main
   artifacts:
