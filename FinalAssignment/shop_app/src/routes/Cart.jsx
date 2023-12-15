@@ -146,6 +146,11 @@ const Cart = () => {
                 className='cart-order-button'
                 disabled={Object.keys(cartItems).length === 0}
                 variant="primary"
+                onClick={() => {
+                  // TODO: navigate to order page
+                  // show alert
+                  alert('Tilaus onnistui! Kiitos tilauksesta!')
+                }}
               >Siirry tilaamaan
               </Button>
               <Button
