@@ -33,7 +33,7 @@ const router = createBrowserRouter(
         path="cart"
         element={<Cart />} />
     </Route>
-  ), {basename : '/web-visualization/FinalAssignment/shop_app/build/'}
+  ), {basename : '/komponentti/'}
 );
 
 // render
