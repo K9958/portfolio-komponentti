@@ -8,5 +8,3 @@ deploy:
     - npm run build
     - cd build
     - rsync -rv * $APP_FOLDER
-  only:
-    - master
