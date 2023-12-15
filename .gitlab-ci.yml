@@ -28,15 +28,12 @@ test_artifact_upload:
   script:
     - cd FinalAssignment/shop_app
     - touch ./build/test.txt
-    - ls -l
-    - ls -l build/
-    - cp -r ./build /build
-    - ls -l /build
+    - cp -r ./build build
   only:
     - main
   artifacts:
     paths:
-      - /build
+      - build
   tags:
     - docker
 
