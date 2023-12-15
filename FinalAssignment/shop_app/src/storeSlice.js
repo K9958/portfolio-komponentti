@@ -13,7 +13,7 @@ const storeSlice = createSlice({
     removeFromCartSingle: (state, action) => {
       // remove one item from the dictionary
       console.log("removing single unit from cart")
-      if (state[action.payload] > 0) {
+      if (state[action.payload] > 1) {
         state[action.payload] -= 1
         console.log(action.payload)
       } else 
