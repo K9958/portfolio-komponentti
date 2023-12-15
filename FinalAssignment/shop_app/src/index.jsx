@@ -16,11 +16,40 @@ import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import storeReducer from './storeSlice'
 
+const localStorageKey = 'shoppingCart';
+
+const saveToLocalStorage = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem(localStorageKey, serializedState);
+  } catch(e) {
+    console.warn(e);
+  }
+}
+
+const loadFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem(localStorageKey);
+    if (serializedState === null) return undefined;
+    return JSON.parse(serializedState);
+  } catch(e) {
+    console.warn(e);
+    return undefined;
+  }
+}
+
 const store = configureStore({
   reducer: {
     cart: storeReducer,
   },
+    preloadedState: loadFromLocalStorage(),
 })
+
+store.subscribe(() => {
+  saveToLocalStorage({
+    cart: store.getState().cart,
+  });
+});
 
 // react router
 const router = createBrowserRouter(
@@ -33,7 +62,7 @@ const router = createBrowserRouter(
         path="cart"
         element={<Cart />} />
     </Route>
-  ), {basename : '/komponentti/'}
+  ),
 );
 
 // render
