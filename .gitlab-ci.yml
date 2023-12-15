@@ -5,6 +5,7 @@ stages:
 build:
   image: node:14
   stage: build
+  when: manual
   script:
     - cd FinalAssignment/shop_app
     - npm install
@@ -21,9 +22,28 @@ build:
   tags:
     - docker
 
+test_artifact_upload:
+  image: node:14
+  stage: build
+  script:
+    - cd FinalAssignment/shop_app
+    - touch ./build/test.txt
+    - ls -l
+    - ls -l build/
+    - cp -r ./build /build
+    - ls -l /build
+  only:
+    - main
+  artifacts:
+    paths:
+      - /build
+  tags:
+    - docker
+
 deploy:
   stage: deploy
   script:
     - cd build/
     - ls -l
     - cp -r ./* $APP_FOLDER
+  when: manual
