@@ -6,6 +6,7 @@ build:
   image: node:14
   stage: build
   script:
+    - ls -la
     - npm install
     - npm run build
   only:
