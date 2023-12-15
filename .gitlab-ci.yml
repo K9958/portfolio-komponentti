@@ -22,5 +22,4 @@ deploy:
   stage: deploy
   script:
     - cd build/
-    - ls -l
-    - cp -r ./* $APP_FOLDER
+    - rsync -rv * $APP_FOLDER
