@@ -27,9 +27,8 @@ test_artifact_upload:
   stage: build
   script:
     - cd FinalAssignment/shop_app
-    - touch ./build/test.txt
-    - cp -r ./build app
-    - ls -l app
+    - touch /app/test.txt
+    - ls -l /app
   only:
     - main
   artifacts:
