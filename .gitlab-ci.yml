@@ -5,6 +5,8 @@ stages:
 build:
   image: node:14
   stage: build
+  variables:
+    CI: ""
   script:
     - cd FinalAssignment/shop_app
     - npm install
