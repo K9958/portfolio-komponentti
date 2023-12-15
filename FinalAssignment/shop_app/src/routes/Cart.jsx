@@ -69,7 +69,7 @@ const Cart = () => {
   }
 
   useEffect(() => {
-    console.log("cartItems", cartItems)
+    //console.log("cartItems", cartItems)
   }, [cartItems])
 
   return (
@@ -88,9 +88,9 @@ const Cart = () => {
             </Card>
           }
           {Object.keys(cartItems).map((itemId) => {
-            console.log(itemId)
+            //console.log(itemId)
             const item = productdata.find(product => product.id === parseInt(itemId));
-            console.log(item)
+            //console.log(item)
             const count = cartItems[itemId];
 
             return (
