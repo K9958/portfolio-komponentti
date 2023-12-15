@@ -1,11 +1,25 @@
-pages:
-  stage: deploy
+stages:
+  - build
+  - deploy
+
+build:
+  image: node:14
+  stage: build
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - cd FinalAssignment/shop_app
+    - npm install
+    - npm run build CI=false
+  only:
+    - main
   artifacts:
     paths:
-    - public
+      - build/
   tags:
-  - general
+    - docker
+
+deploy:
+  stage: deploy
+  script:
+    - cd build/
+    - ls -l
+    - cp -r ./* $APP_FOLDER
