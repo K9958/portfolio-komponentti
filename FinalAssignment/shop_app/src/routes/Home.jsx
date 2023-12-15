@@ -8,7 +8,6 @@ const popular = productdata
   .slice(0, 14);
 
 const Home = (props) => {
-  console.log(props);
   return (
     <>
       <RotatingBanner />
