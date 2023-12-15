@@ -5,36 +5,16 @@ stages:
 build:
   image: node:14
   stage: build
-  when: manual
   script:
     - cd FinalAssignment/shop_app
     - npm install
     - npm run build CI=""
-    - ls -l
-    - ls -l build/
-    - cp -r ./build /build
-    - ls -l /build
+    - cp -r ./build $CI_PROJECT_DIR/build
   only:
     - main
   artifacts:
     paths:
       - build/
-  tags:
-    - docker
-
-test_artifact_upload:
-  image: node:14
-  stage: build
-  script:
-    - mkdir $CI_PROJECT_DIR/app
-    - touch test.txt
-    - cp test.txt $CI_PROJECT_DIR/app
-    - ls -l app
-  only:
-    - main
-  artifacts:
-    paths:
-      - app
   tags:
     - docker
 
@@ -44,4 +24,3 @@ deploy:
     - cd build/
     - ls -l
     - cp -r ./* $APP_FOLDER
-  when: manual
