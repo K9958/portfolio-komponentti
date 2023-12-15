@@ -27,14 +27,14 @@ test_artifact_upload:
   stage: build
   script:
     - cd FinalAssignment/shop_app
-    - mkdir /app
-    - touch /app/test.txt
-    - ls -l /app
+    - mkdir app
+    - touch app/test.txt
+    - ls -l app
   only:
     - main
   artifacts:
     paths:
-      - app
+      - app/
   tags:
     - docker
 
