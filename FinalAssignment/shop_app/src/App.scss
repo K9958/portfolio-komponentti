@@ -83,6 +83,18 @@ a {
   filter: brightness(50%);
 }
 
+.nav-dropdown-link {
+  color: $primary-text-color;
+}
+
+.nav-dropdown-link:hover {
+  color: $primary-text-color;
+}
+
+.nav-dropdown-link:active {
+  color: white;
+}
+
 .product-list {
   display: grid;
   margin: 20px;

@@ -1,11 +1,12 @@
 import React from 'react'
-import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
+import { Container, Navbar, NavDropdown, Offcanvas, Nav, NavbarToggle } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const imageURL = "/komponentti/"
 
 const Navigation = () => {
+  const [expanded, setExpanded] = React.useState(false)
   // eslint-disable-next-line no-unused-vars
   const cartItems = useSelector(state => state.cart)
 
@@ -21,6 +22,7 @@ const Navigation = () => {
             data-bs-theme="dark"
             className='custom-toggler'
             style={{ border: "none" }}
+            onClick={() => setExpanded(expanded ? false : "lg")}
           />
           <Navbar.Brand as={Link} to={"/"}
           >
@@ -37,8 +39,10 @@ const Navigation = () => {
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
             placement="start"
+            show={expanded}
+            onHide={() => setExpanded(false)}
           >
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header closeButton onClick={() => setExpanded(false)}>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                 <img
                   alt=""
@@ -52,30 +56,32 @@ const Navigation = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-start flex-grow-1 pe-3">
-                <Nav.Link as={Link} to={"/"}>Etusivu</Nav.Link>
+                <Nav.Link as={Link} to={"/"}
+                  onClick={() => setExpanded(false)}
+                >Etusivu</Nav.Link>
                 <NavDropdown
                   title="Tuotteet"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                 >
-                  <NavDropdown.Item as={Link} to={"/categories/gpu"}>
+                  <NavDropdown.Item as={Link} to={"/categories/gpu"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Näytönohjaimet
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/cpu"}>
+                  <NavDropdown.Item as={Link} to={"/categories/cpu"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Prosessorit
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/motherboard"}>
+                  <NavDropdown.Item as={Link} to={"/categories/motherboard"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Emolevyt
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/case"}>
+                  <NavDropdown.Item as={Link} to={"/categories/case"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Kotelot
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/psu"}>
+                  <NavDropdown.Item as={Link} to={"/categories/psu"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Virtalähteet
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/ram"}>
+                  <NavDropdown.Item as={Link} to={"/categories/ram"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Muistit
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/categories/hdd-ssd"}>
+                  <NavDropdown.Item as={Link} to={"/categories/hdd-ssd"} className='nav-dropdown-link' onClick={() => setExpanded(false)}>
                     Kiintolevyt ja SSD:t
                   </NavDropdown.Item>
                   {/* <NavDropdown.Divider /> */}
