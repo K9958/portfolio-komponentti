@@ -95,6 +95,10 @@ a {
   color: white;
 }
 
+.right {
+  text-align: right;
+}
+
 .return-back {
   color: $primary-text-color;
   margin-left: 20px;
@@ -192,6 +196,13 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    border: none;
+    color: white;
+
+    .card-body {
+      background-color: #484848;
+    }
 
     img {
       width: 100%;
@@ -210,9 +221,14 @@ a {
       color: $primary-text-color;
       font-weight: 500;
       float: right;
-      font-size: 2rem;
+      font-size: 1.6rem;
       -webkit-text-stroke: 0.3px #fff;
       text-shadow: #cacaca 1px 0 14px;
+
+      .per-price {
+        color: rgb(149, 149, 149);
+        font-size: 1.3rem;
+      }
     }
 
     .product-button {
@@ -285,6 +301,12 @@ a {
 
   .second-item {
     font-weight: 500;
+  }
+
+  .total-price {
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: $primary-text-color;
   }
 
   .clear-cart-button {

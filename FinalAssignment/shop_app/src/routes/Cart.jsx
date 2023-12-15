@@ -102,13 +102,9 @@ const Cart = () => {
                     {item.description_fi}
                   </Card.Text>
                   <div className='end-of-card'>
-                    <Card.Text className='product-price'>
-                      {item.price * count},- €
-                      à {item.price} €
-                      yhteensä {item.price * count} €
-                    </Card.Text>
-                    <Card.Text className='product-price'>
-                      {count} kpl
+                    <Card.Text className='product-price right'>
+                      {item.price * count},- € <br></br>
+                      {count > 1 && <span className='per-price'>à {item.price} €</span>}
                     </Card.Text>
                     <div>
                       <InputGroup className='cartitem-count-controls'>
@@ -134,7 +130,7 @@ const Cart = () => {
             <Card.Body>
               <Card.Title className='cart-title'>Yhteenveto</Card.Title>
               <Card.Text className='cart-row'>
-                <span className='first-item'>Tuotteita:</span><span className='second-item'>{cartItems.length}</span>
+                <span className='first-item'>Tuotteita:</span><span className='second-item'>{Object.keys(cartItems).length} kpl</span>
               </Card.Text>
               <Card.Text className='cart-row'>
                 <span className='first-item'>Yhteensä (ALV 0%):</span><span className='second-item'>{formatEuros(calculateWithoutVat())}</span>
@@ -144,7 +140,7 @@ const Cart = () => {
               </Card.Text>
               <hr></hr>
               <Card.Text className='cart-row'>
-                <span className='first-item'>Yhteensä:</span><span className='second-item'>{formatEuros(calculateTotal())}</span>
+                <span className='first-item'>Yhteensä:</span><span className='second-item total-price'>{formatEuros(calculateTotal())}</span>
               </Card.Text>
               <Button
                 className='cart-order-button'
