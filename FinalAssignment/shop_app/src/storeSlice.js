@@ -31,7 +31,7 @@ const storeSlice = createSlice({
     getCartCount: (state) => {
       console.log("getting cart count")
       let count = 0
-      for (const [key, value] of Object.entries(state)) {
+      for (const [, value] of Object.entries(state)) {
         count += value
       }
       return count
