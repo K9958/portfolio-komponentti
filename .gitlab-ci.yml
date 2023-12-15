@@ -8,6 +8,8 @@ build:
   script:
     - npm install
     - npm run build
+  only:
+    - main
   artifacts:
     paths:
       - build/
