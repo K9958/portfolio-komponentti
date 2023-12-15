@@ -34,8 +34,36 @@ $body-bg-gradient: linear-gradient(rgba(19, 19, 19, 1) 0%, rgba(13, 13, 13, 1) 8
   background-image: (url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%28255, 0, 43, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e"));
 }
 
+.shadow-animation:hover {
+  animation: text-shadow-animation 3s infinite ease-in-out;
+}
+
 .nav-link {
   color: $primary-text-color;
+}
+
+.nav-link:hover {
+  animation: 3s linear 0s infinite text-shadow-animation;
+}
+
+@keyframes text-shadow-animation {
+
+  0%,
+  100% {
+    text-shadow: -3px -2px 13px #ffccd5;
+  }
+
+  25% {
+    text-shadow: 0 0 10px $primary-text-color;
+  }
+
+  50% {
+    text-shadow: 4px 0 13px #ff5a76;
+  }
+
+  75% {
+    text-shadow: 0 0 10px $primary-text-color;
+  }
 }
 
 .offcanvas {
@@ -72,7 +100,81 @@ a {
 
 //shopping cart icon
 .shopping-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  // Add hint box to the shopping cart icon
+  .hint-box {
+    position: absolute;
+    right: 100%;
+    margin-right: 10px;
+    background-color: white;
+    color: $primary-text-color;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+    // Add the arrow triangle to the hint box
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent white;
+    }
+  }
+
+  &.show-hint .hint-box {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .shopping-cart-svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 25px;
+    height: auto;
+  }
+
+  &:hover {
+    background-color: white;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover>div svg path {
+    fill: $primary-text-color
+  }
+}
+
+// shopping cart counter
+.shopping-cart-count {
+  position: absolute;
+  left: 20px;
+  bottom: 7.5px;
+  background-color: $primary-text-color;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
 .banner-image {
@@ -116,6 +218,11 @@ a {
     display: flex;
     background-color: rgba(255, 255, 255, 0.24);
     color: white;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.27);
+    }
 
     .card-body {
       display: flex;
@@ -128,6 +235,17 @@ a {
       justify-self: end;
       margin-top: auto;
       width: 100%;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: #bc2841;
+        border-color: #bc2841;
+      }
+
+      &:active {
+        background-color: #4f000d;
+        border-color: #4f000d;
+      }
     }
 
     .product-price {
@@ -202,6 +320,11 @@ a {
 
     .card-body {
       background-color: #484848;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: #484848f3;
+      }
     }
 
     img {
@@ -234,6 +357,17 @@ a {
     .product-button {
       width: 100%;
       color: white;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: #bc2841;
+        border-color: #bc2841;
+      }
+    
+      &:active {
+        background-color: #4f000d;
+        border-color: #4f000d;
+      }
     }
   }
 }
@@ -292,6 +426,18 @@ a {
     margin-top: 2rem;
     font-weight: bold;
     letter-spacing: 0.5px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: #bc2841;
+      border-color: #bc2841;
+    }
+  
+    &:active {
+      background-color: #4f000d;
+      border-color: #4f000d;
+      color: white;
+    }
   }
 
   .first-item {
@@ -328,6 +474,17 @@ a {
     width: unset;
     font-size: 1.3rem;
     font-weight: bold;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: #bc2841;
+      border-color: #bc2841;
+    }
+  
+    &:active {
+      background-color: #4f000d;
+      border-color: #4f000d;
+    }
   }
 
   .control-amount {
@@ -386,6 +543,17 @@ footer {
 
       .product-button {
         max-width: 300px;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          background-color: #bc2841;
+          border-color: #bc2841;
+        }
+      
+        &:active {
+          background-color: #4f000d;
+          border-color: #4f000d;
+        }
       }
 
       .product-price {
@@ -413,13 +581,14 @@ footer {
     .cart-item {
       flex-direction: row;
 
-      .remove-button, .product-button {
+      .remove-button,
+      .product-button {
         width: 300px;
       }
     }
 
     .cart {
-      flex-grow:6;
+      flex-grow: 6;
     }
 
     .cart-overview {
