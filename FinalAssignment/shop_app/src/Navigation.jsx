@@ -3,7 +3,7 @@ import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const imageURL ="https://k9958.pages.labranet.jamk.fi/web-visualization/FinalAssignment/shop_app/build/"
+const imageURL ="/komponentti/"
 
 const Navigation = () => {
   // eslint-disable-next-line no-unused-vars
@@ -91,7 +91,7 @@ const Navigation = () => {
             >
               <img
                 alt=""
-                src="./shoppingcart.svg"
+                src={imageURL + "shoppingcart.svg"}
                 width="23"
                 height="30"
                 className="d-inline-block align-top"
