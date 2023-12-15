@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const imageURL ="https://k9958.pages.labranet.jamk.fi/web-visualization/FinalAssignment/shop_app/build/"
 
 const Navigation = () => {
+  // eslint-disable-next-line no-unused-vars
   const cartItems = useSelector(state => state.cart)
 
   const expand = "lg"
