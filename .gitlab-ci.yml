@@ -1,11 +1,12 @@
-pages:
+stages:
+  - deploy
+deploy:
   stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
-  artifacts:
-    paths:
-    - public
-  tags:
-  - general
+    - apt-get update -qq && apt-get install -y -qq rsync
+    - npm i
+    - npm run build
+    - cd build
+    - rsync -rv * $APP_FOLDER
+  only:
+    - master
