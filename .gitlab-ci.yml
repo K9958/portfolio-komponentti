@@ -9,6 +9,10 @@ build:
     - cd FinalAssignment/shop_app
     - npm install
     - npm run build CI=""
+    - ls -l
+    - ls -l build/
+    - cp -r ./build /build
+    - ls -l /build
   only:
     - main
   artifacts:
