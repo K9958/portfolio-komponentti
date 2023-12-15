@@ -26,6 +26,7 @@ test_artifact_upload:
   image: node:14
   stage: build
   script:
+    - cd $CI_PROJECT_DIR
     - mkdir app
     - touch app/test.txt
     - ls -l app
@@ -33,7 +34,7 @@ test_artifact_upload:
     - main
   artifacts:
     paths:
-      - app/
+      - app
   tags:
     - docker
 
