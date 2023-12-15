@@ -1,9 +1,20 @@
 stages:
-  - deploy 
+  - build
+  - deploy
+
+build:
+  image: node:14
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+
 deploy:
   stage: deploy
   script:
-    - npm i
-    - npm run build
-    - cd build
-    - rsync -rv * $APP_FOLDER
+    - cd build/
+    - ls -l
+    - cp -r ./* $APP_FOLDER
