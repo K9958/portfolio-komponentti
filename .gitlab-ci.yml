@@ -11,6 +11,8 @@ build:
   artifacts:
     paths:
       - build/
+  tags:
+    - docker
 
 deploy:
   stage: deploy
