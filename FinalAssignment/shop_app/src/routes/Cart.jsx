@@ -1,16 +1,22 @@
 import { Card, Button, InputGroup, Form } from 'react-bootstrap';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addToCart, removeFromCart, removeFromCartSingle, clearCart } from "../storeSlice";
 
+// Allow divs to be animated when added/removed from the DOM
+// Otherwise the divs will just appear/disappear without any animation
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 const { productdata } = require('../productdata.json');
 
 const Cart = () => {
+  const nodeRef = useRef(null)
   const dispatch = useDispatch()
   const cartItems = useSelector(state => state.cart);
+  const [removingItemId, setRemovingItemId] = useState(null);
 
   // console.log("items",cartItems)
   // console.log(productdata)
@@ -57,11 +63,26 @@ const Cart = () => {
   }
 
   const handleRemoveItem = (id) => {
-    dispatch(removeFromCart(id))
+    setRemovingItemId(id)
+    setTimeout(() => {
+      dispatch(removeFromCart(id))
+      setRemovingItemId(null)
+    }, 300)
   }
 
-  const handleRemoveSingleItem = (id) => {
-    dispatch(removeFromCartSingle(id))
+  const handleRemoveSingleItem = (id, count) => {
+    console.log(count)
+    if (count === 1) {
+      console.log('removing the item entry')
+      // TODO: animate the item removal
+      setRemovingItemId(id)
+      setTimeout(() => {
+        dispatch(removeFromCartSingle(id))
+        setRemovingItemId(null)
+      }, 300)
+    } else {
+      dispatch(removeFromCartSingle(id))
+    }
   }
 
   const handleAddToCart = (payload) => {
@@ -87,43 +108,46 @@ const Cart = () => {
               </Card.Body>
             </Card>
           }
-          {Object.keys(cartItems).map((itemId) => {
-            //console.log(itemId)
-            const item = productdata.find(product => product.id === parseInt(itemId));
-            //console.log(item)
-            const count = cartItems[itemId];
+          <TransitionGroup component={null}>
+            {Object.keys(cartItems).map((itemId) => {
+              //console.log(itemId)
+              const item = productdata.find(product => product.id === parseInt(itemId));
+              //console.log(item)
+              const count = cartItems[itemId];
 
-            return (
-              <Card key={itemId} className="cart-item">
-                <Card.Img variant="top" src={item.src ?? "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} className='product-image' />
-                <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>
-                    {item.description_fi}
-                  </Card.Text>
-                  <div className='end-of-card'>
-                    <Card.Text className='product-price right'>
-                      {item.price * count},- € <br></br>
-                      {count > 1 && <span className='per-price'>à {item.price} €</span>}
-                    </Card.Text>
-                    <div>
-                      <InputGroup className='cartitem-count-controls'>
-                        <Button className='control' onClick={() => handleRemoveSingleItem(itemId)}>-</Button>
-                        <Form.Control className='control-amount' value={count} disabled />
-                        <Button className="control" onClick={() => handleAddToCart({ id: item.id, count: count + 1 })}>+</Button>
-                      </InputGroup>
-                    </div>
-                    <Button
-                      className='product-button remove-button'
-                      variant="primary"
-                      onClick={() => handleRemoveItem(itemId)}
-                    >Poista tuote
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            );
-          })}
+              return (
+                <CSSTransition key={itemId} timeout={300} unmountOnExit nodeRef={nodeRef}>
+                  <Card className={itemId === removingItemId ? 'removing cart-item' : 'cart-item'} ref={nodeRef} id={itemId}>
+                    <Card.Img variant="top" src={item.src ?? "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"} className='product-image' />
+                    <Card.Body>
+                      <Card.Title>{item.name}</Card.Title>
+                      <Card.Text>
+                        {item.description_fi}
+                      </Card.Text>
+                      <div className='end-of-card'>
+                        <Card.Text className='product-price right d-flex align-items-center'>
+                          {count > 1 && <span className='per-price me-3'>(à {item.price} €)</span>} {item.price * count},- €
+                        </Card.Text>
+                        <div>
+                          <InputGroup className='cartitem-count-controls'>
+                            <Button className='control' onClick={() => handleRemoveSingleItem(itemId, count)}>-</Button>
+                            <Form.Control className='control-amount' value={count} disabled />
+                            <Button className="control" onClick={() => handleAddToCart({ id: item.id, count: count + 1 })}>+</Button>
+                          </InputGroup>
+                        </div>
+                        <Button
+                          className='product-button remove-button'
+                          variant="primary"
+                          onClick={() => handleRemoveItem(itemId)}
+                        >Poista tuote
+                        </Button>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </CSSTransition>
+              );
+            })}
+          </TransitionGroup>
         </div>
         <Card className='cart-overview'>
           <div>

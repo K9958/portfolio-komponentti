@@ -528,6 +528,12 @@ footer {
   margin-bottom: 20px;
 }
 
+.removing {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
 //
 // Desktop or tablet media query
 //
