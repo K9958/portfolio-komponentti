@@ -42,6 +42,12 @@ $body-bg-gradient: linear-gradient(rgba(19, 19, 19, 1) 0%, rgba(13, 13, 13, 1) 8
   color: $primary-text-color;
 }
 
+// display underline on active nav link
+// only
+.container div div .nav-link.active { 
+  border-bottom: 3px solid red;
+}
+
 .nav-link:hover {
   animation: 3s linear 0s infinite text-shadow-animation;
 }
