@@ -42,8 +42,13 @@ $body-bg-gradient: linear-gradient(rgba(19, 19, 19, 1) 0%, rgba(13, 13, 13, 1) 8
   color: $primary-text-color;
 }
 
-// display underline on active nav link
-// only
+
+// Styling for only the header navbar (not sidebar)
+.container div div .nav-link {
+  border-bottom: 3px solid transparent;
+}
+
+// Display underline on active nav link
 .container div div .nav-link.active { 
   border-bottom: 3px solid red;
 }
@@ -100,8 +105,44 @@ body {
   padding-bottom: 5rem;
 }
 
+// Hide scrollbar
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+// override link decoration
 a {
   text-decoration: none;
+}
+
+// About us page
+.about-us {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: large;
+
+  h1 {
+    color: $primary-text-color;
+  }
+
+  h2 {
+    color: $primary-text-color;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  p, ul li {
+    line-height: 1.6;
+  }
 }
 
 //shopping cart icon

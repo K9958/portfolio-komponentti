@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const imageURL = "/komponentti/"
 
@@ -80,7 +80,9 @@ const Navigation = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-start flex-grow-1 pe-3">
-                <Nav.Link as={Link} to={"/"}
+                <Nav.Link
+                  as={NavLink}
+                  to={"/"}
                   onClick={() => setExpanded(false)}
                 >Etusivu</Nav.Link>
                 <NavDropdown
@@ -110,6 +112,11 @@ const Navigation = () => {
                   </NavDropdown.Item>
                   {/* <NavDropdown.Divider /> */}
                 </NavDropdown>
+                <Nav.Link
+                  as={NavLink}
+                  to={"/aboutus"}
+                  onClick={() => setExpanded(false)}
+                >Yrityksemme</Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

@@ -29,7 +29,7 @@ const Categories = () => {
     <div>
       {!categoryExists ? <ErrorElement h2='Tuoteryhmää ei löydy :(' /> :
         <div>
-          <h1 className='first-header'>{categoryName}</h1>
+          <h1 className='first-header'>Tuotekategoria: {categoryName}</h1>
           <ProductList products={filteredProducts} />
         </div>
       }

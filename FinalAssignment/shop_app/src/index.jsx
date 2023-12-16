@@ -15,6 +15,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import storeReducer from './storeSlice'
+import Aboutus from './routes/Aboutus';
 
 const localStorageKey = 'shoppingCart';
 
@@ -58,6 +59,7 @@ const router = createBrowserRouter(
       <Route element={<Home />} index="true" />
       <Route path="/product/:productId" element={<ProductPage />} />
       <Route path="categories/:category" element={<Categories />} />
+      <Route path="aboutus" element={<Aboutus />} />
       <Route
         path="cart"
         element={<Cart />} />
