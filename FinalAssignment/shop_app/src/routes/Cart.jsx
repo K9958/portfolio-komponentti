@@ -154,7 +154,7 @@ const Cart = () => {
             <Card.Body>
               <Card.Title className='cart-title'>Yhteenveto</Card.Title>
               <Card.Text className='cart-row'>
-                <span className='first-item'>Tuotteita:</span><span className='second-item'>{Object.keys(cartItems).length} kpl</span>
+                <span className='first-item'>Tuotteita:</span><span className='second-item'>{Object.values(cartItems).reduce((a, b) => a + b, 0)} kpl</span>
               </Card.Text>
               <Card.Text className='cart-row'>
                 <span className='first-item'>Yhteensä (ALV 0%):</span><span className='second-item'>{formatEuros(calculateWithoutVat())}</span>

@@ -39,8 +39,7 @@ const Navigation = () => {
     <>
       <Navbar expand={expand} sticky="top" className="bg-body-tertiary navbar">
         <Container fluid
-          className='container'
-          style={{ justifyContent: "start" }}
+          className='container navbarcontainer'
         >
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}
             data-bs-theme="dark"
@@ -57,7 +56,7 @@ const Navigation = () => {
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            Komponentti
+            <span className='brand-name'>Komponentti</span>
           </Navbar.Brand>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
@@ -121,7 +120,7 @@ const Navigation = () => {
             </Offcanvas.Body>
           </Navbar.Offcanvas>
           <Navbar.Brand href="/cart"
-            as={Link} to={"/cart"} style={{ marginLeft: "auto" }}
+            as={Link} to={"/cart"}
             className={`shopping-cart position-relative ${showHint ? 'show-hint' : ''}`}
           >
             <div className='shopping-cart-svg-container'>
