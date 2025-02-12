@@ -8,7 +8,7 @@ build:
   variables:
     CI: ""
   script:
-    - cd FinalAssignment/shop_app
+    - cd komponentti_app
     - npm install
     - npm run build CI=""
     - cp -r ./build $CI_PROJECT_DIR/build
