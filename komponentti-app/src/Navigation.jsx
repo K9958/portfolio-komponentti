@@ -3,7 +3,7 @@ import { Container, Navbar, NavDropdown, Offcanvas, Nav } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 
-const imageURL = ""
+const imageURL = "/"
 
 const Navigation = () => {
   const [expanded, setExpanded] = React.useState(false)
