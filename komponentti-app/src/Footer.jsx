@@ -8,7 +8,7 @@ const Footer = () => {
         height="30"
         className="d-inline-block align-top"
       />{' '}
-      Komponentti © 2023. All rights reserved.
+      Komponentti © 2023. All rights reserved. <br></br>TÄMÄ ON DEMOÄPPI. Kristian Kantola © 2023
     </footer>
   )
 }
